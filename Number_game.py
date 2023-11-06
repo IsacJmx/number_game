@@ -2,9 +2,9 @@
 import random
 
 def main():
-    
     players()
     number = get_number()
+
 
 def players():
     p1 = input("Who is player one? ")
@@ -14,11 +14,10 @@ def players():
 
 
 def get_number():
-    pass
-
-
-def winner():
-    pass
+    
+    # get min and max numbers
+    Minimum  = int(input("What is the minimum number? "))
+    Maximum  = int(input('What is the maximum number? '))
 
 
 def turns(Minimum, Maximum):
@@ -36,3 +35,5 @@ def turns(Minimum, Maximum):
     else:
         print("You guessed the correct number!1!!!")
     
+
+  
