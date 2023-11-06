@@ -1,17 +1,16 @@
 #main
 import random
 
-
 def main():
-    
-
-
-
-
+    players()
+    number = get_number()
 
 
 def players():
-    pass
+    p1 = input("Who is player one? ")
+    p2 = input("Who is player two? ")
+    print("Welcome ", p1, " ", "and ", p2,
+          "!",sep='')
 
 
 def get_number():
@@ -19,35 +18,22 @@ def get_number():
     # get min and max numbers
     Minimum  = int(input("What is the minimum number? "))
     Maximum  = int(input('What is the maximum number? '))
-         
-    
-
-    
-    
 
 
+def turns(Minimum, Maximum):
     
     
-
-
-def turns():
-    pass
-
-
-
-# Da_Number = '100'
-    # get the players guess
-    #number = input('Enter your number')
-    
-    #while number != Da_Number:
-    # if the number is right 
-        #if number != Da_Number:
-    #        print('That was wrong')
-     #       number  = input('what is guess? ')
+    answer = random.randint(Minimum, Maximum)
+    guess = 0
+    while guess != answer: 
+        guess = input("What is ", p1, "'s guess? ")
+        get_number()
         
-      #      if number != Da_Number:
-       #         number = input('What is p1 guess: ')
+        if guess != answer:
+            guess = input("What is ", p2, "'s guess? ")
+            
+    else:
+        print("You guessed the correct number!1!!!")
+    
 
-    #if number == Da_Number:
-     #   print('That was right')
-      #  print('player won')
+  
