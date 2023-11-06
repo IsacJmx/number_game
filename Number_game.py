@@ -3,12 +3,11 @@ import random
 
 
 def main():
-    pass
+    
 
 
 
-def GTN():
-    pass
+
 
 
 def players():
@@ -20,13 +19,15 @@ def get_number():
     # get min and max numbers
     Minimum  = int(input("What is the minimum number? "))
     Maximum  = int(input('What is the maximum number? '))
-                
-    number = random.randint(Minimum, Maximum)
-    print(number)
+         
     
 
-def winner():
-    pass
+    
+    
+
+
+    
+    
 
 
 def turns():
