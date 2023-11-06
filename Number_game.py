@@ -1,4 +1,6 @@
 #main
+import random
+
 
 def main():
     pass
@@ -16,11 +18,12 @@ def players():
 def get_number():
     
     # get min and max numbers
-    Min = input("What is the minimum number? ")
-    Max = input('What is the maximum number? ')
+    Minimum  = int(input("What is the minimum number? "))
+    Maximum  = int(input('What is the maximum number? '))
                 
-    return Min
-    return Max
+    number = random.randint(Minimum, Maximum)
+    print(number)
+    
 
 def winner():
     pass
