@@ -2,8 +2,28 @@
 import random
 
 def main():
+    
+    minimum = 1
+    maximum =1000
 
+    choice = menu()
+        
+    while choice > 0 and choice < 3:
+        
+        if choice == 1:
+            
+            p1,p2 = players()
+            
+            turns(minimum, Maximum, p1, p2)
+            
+        
+        elif choice == 2:
+            minimum,maximum = get_number()
 
+        
+        
+        
+        
 def menu():
     
     Choice = 0
@@ -13,7 +33,7 @@ def menu():
         print('2. Choose Range')
         print('3.Exit')
         
-        Cice = int(input(': '))
+        Choice = int(input(': '))
         return Choice
     
 def players():
@@ -34,17 +54,21 @@ def get_number():
     Maximum  = int(input('What is the maximum number? '))
 
 
-def turns(Minimum, Maximum):
+def turns(Minimum, Maximum, p1, p2):
     
     
     answer = random.randint(Minimum, Maximum)
     guess = 0
     while guess != answer: 
-        guess = input("What is ", p1, "'s guess? ")
-        get_number()
+        print("What is "+ p1 + "'s guess? ", end='')
+        int(input(': '))
         
         if guess != answer:
-            guess = input("What is ", p2, "'s guess? ")
+            
+            print("What is "+ p2 + "'s guess? ", end='')
+        int(input(': '))
+            
+            
             
     else:
         print("You guessed the correct number!1!!!")
