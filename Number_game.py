@@ -2,16 +2,30 @@
 import random
 
 def main():
-    players()
-    number = get_number()
 
 
+def menu():
+    
+    Choice = 0
+    while Choice < 1 or Choice > 4:
+        print('Welcome to the number guesser game')
+        print('1. start game')
+        print('2. Choose Range')
+        print('3.Exit')
+        
+        Cice = int(input(': '))
+        return Choice
+    
 def players():
+    
+    # get the players names
     p1 = input("Who is player one? ")
     p2 = input("Who is player two? ")
+    
+    # print welcome
     print("Welcome ", p1, " ", "and ", p2,
           "!",sep='')
-
+    
 
 def get_number():
     
