@@ -14,13 +14,13 @@ def main():
             
             p1,p2 = players()
             
-            turns(minimum, Maximum, p1, p2)
+            turns(minimum, maximum, p1, p2)
             
         
         elif choice == 2:
             minimum,maximum = get_number()
-
-        
+            
+        choice = menu()
         
         
         
@@ -45,7 +45,7 @@ def players():
     # print welcome
     print("Welcome ", p1, " ", "and ", p2,
           "!",sep='')
-    
+    return p1,p2  
 
 def get_number():
     
@@ -53,20 +53,60 @@ def get_number():
     Minimum  = int(input("What is the minimum number? "))
     Maximum  = int(input('What is the maximum number? '))
 
+    return Minimum,Maximum
 
-def turns(Minimum, Maximum, p1, p2):
+def turns(minimum, maximum, p1, p2):
     
     
-    answer = random.randint(Minimum, Maximum)
+    answer = random.randint(minimum, maximum)
     guess = 0
+    
     while guess != answer: 
         print("What is "+ p1 + "'s guess? ", end='')
-        int(input(': '))
+        guess = int(input(': '))
+        
+        
+        if guess < minimum:
+            print("Invalid guess, try again.")
+            
+            print("What is "+ p1 + "'s guess again ", end='')
+            guess = int(input(': '))
+        
+        elif guess > maximum:
+            print("Invalid guess, try again.")
+            
+            print("What is "+ p1 + "'s guess again ", end='')
+            guess = int(input(': '))
+        
+        elif guess < answer:
+            print('The number is higher than your guess.')
+        elif guess > answer:
+            print('The number is lower than your guess.')
+        elif guess == answer:
+            print('You guessed the number.')
         
         if guess != answer:
             
             print("What is "+ p2 + "'s guess? ", end='')
-        int(input(': '))
+        guess = int(input(': '))
+        
+        if guess < minimum:
+            print("Invalid guess, try again.")
+            
+            print("What is "+ p2 + "'s guess again ", end='')
+            guess = int(input(': '))
+        elif guess > maximum:
+            print("Invalid guess, try again.")
+            
+            print("What is "+ p2 + "'s guess again ", end='')
+            guess = int(input(': '))
+        elif guess < answer:
+            print('The number is highter than your guess.')
+        elif guess > answer:
+            print('The number is lower than your guess.')
+        elif guess == answer:
+            print('You guessed the number.')
+        
             
             
             
